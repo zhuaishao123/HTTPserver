@@ -1,7 +1,5 @@
 #!/bin/bash
 
-# 编译服务器程序
-make
 
 # 检查是否成功编译
 if [ $? -eq 0 ]; then

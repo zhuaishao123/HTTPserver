@@ -8,13 +8,12 @@
 #include <error.h>
 #include <fcntl.h>
 #include <sys/epoll.h>
-#include "locker.h"
-#include "threadpool.h"
 #include <signal.h>
-#include "http_conn.h"
 #include <errno.h>
 #include <assert.h>
-
+#include "../http_conn/http_conn.h"
+#include "../include/threadpool.h"
+#include "../include/locker.h"
 
 #define MAX_FD 65535  //最大文件描述符个数
 #define MAX_EVENT_NUMBER 10000  //单次监听最大数量
