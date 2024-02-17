@@ -1,4 +1,4 @@
-#include "http_conn.h"
+#include "./http_conn.h"
 
 // 所有的客户数
 int http_conn::m_epollfd = -1;
@@ -17,7 +17,7 @@ const char* error_500_title = "Internal Error";
 const char* error_500_form = "There was an unusual problem serving the requested file.\n";
 
 
-const char * doc_root = "/home/zs/test/HTTPserver/resources" ;
+const char * doc_root = "../resources" ;
 
 //设置文件描述符
 int setnonblocking(int fd){
