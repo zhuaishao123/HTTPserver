@@ -50,11 +50,14 @@ threadpool<T>::threadpool(int thread_num,int max_requests) :
     m_thread_number(thread_num),m_max_requests(max_requests),
     m_stop(false),m_threads(NULL){
     if(thread_num <= 0 || max_requests <=0){
-        throw std::exception();
+        printf("thread_num : %d \n max_requests : %d\n",thread_num,max_requests);
+        assert(false && "thread_num <= 0 || max_requests <=0\n");
+        // throw std::exception();
     }
 
     m_threads = new pthread_t[m_thread_number];
     if(!m_threads){
+        printf("m_threads is NULL\n");
         throw std::exception();
     }   
 

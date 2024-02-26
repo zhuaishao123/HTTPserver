@@ -41,7 +41,9 @@ int main(int argc , char * argv[]){
         printf("按照如下格式运行: %s port_number\n",basename(argv[0]));
         exit(-1);
     }
-
+    
+    printf("begin test------------\n");
+    fflush(stdout);
     //获取端口号
     int port = atoi(argv[1]);
 
@@ -77,7 +79,7 @@ int main(int argc , char * argv[]){
     setsockopt(listenfd,SOL_SOCKET,SO_REUSEADDR,&reuse,sizeof(reuse));   //delete--------------------
     int ret = bind(listenfd,(struct sockaddr *)&address,sizeof(address));
     if(ret == -1){
-        perror("bind");
+        perror("bind section");
         exit(-1);
     }
 
@@ -85,7 +87,7 @@ int main(int argc , char * argv[]){
     //监听
     ret = listen(listenfd,5);
     if(ret == -1){
-        perror("listen");
+        perror("listen secrion");
         exit(-1);
     }
 

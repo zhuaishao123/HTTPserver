@@ -6,7 +6,7 @@ OBJ = $(notdir $(patsubst %.cpp, %.o, $(SRC)))
 
 lib = -lpthread
 version = c++11
-log = run.log
+log = *.log
 
 # all: $(TARGET)
 
@@ -23,5 +23,5 @@ debug:
 	@echo $(SRC)
 	@echo $(OBJ)
 clean :
-	rm -f *.o $(TARGET) $(log)
+	rm -f *.o $(TARGET) 
 
